@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: 0.3s;
 }
 
 body.theme-1 {
@@ -20,8 +21,13 @@ body.theme-1 {
   --keybackground: hsl(30, 25%, 89%);
   --keyshadow: hsl(28, 16%, 65%);
   /* text */
-  --deepText: hsl(221, 14%, 31%);
-  --White: hsl(0, 0%, 100%);
+
+  --logoColor: hsl(0, 0%, 100%);
+  --pColor: hsl(0, 0%, 100%);
+  --displayNum: hsl(0, 0%, 100%);
+  --btnNum: hsl(221, 14%, 31%);
+  --twoBtnColor: hsl(0, 0%, 100%);
+  --equalColor: hsl(0, 0%, 100%);
 }
 
 body.theme-2 {
@@ -30,15 +36,20 @@ body.theme-2 {
   --keypadNtogglebackground: hsl(0, 5%, 81%);
   --screenbackground: hsl(0, 0%, 93%);
   /* key */
-  --keybackground: hsl(185, 42%, 37%);
-  --keyshadow: hsl(185, 58%, 25%);
+  --twokeybackground: hsl(185, 42%, 37%);
+  --twokeyshadow: hsl(185, 58%, 25%);
   --keybackgroundNtoggle: hsl(25, 98%, 40%);
-  --keyshadow: hsl(25, 99%, 27%);
+  --equalkeyshadow: hsl(25, 99%, 27%);
   --keybackground: hsl(45, 7%, 89%);
   --keyshadow: hsl(35, 11%, 61%);
   /* text */
-  --deepText: hsl(60, 10%, 19%);
-  --White: hsl(0, 0%, 100%);
+
+  --logoColor: hsl(60, 10%, 19%);
+  --pColor: hsl(60, 10%, 19%);
+  --displayNum: hsl(60, 10%, 19%);
+  --btnNum: hsl(60, 10%, 19%);
+  --twoBtnColor: hsl(0, 0%, 100%);
+  --equalColor: hsl(0, 0%, 100%);
 }
 
 body.theme-3 {
@@ -47,15 +58,20 @@ body.theme-3 {
   --keypadNtogglebackground: hsl(268, 71%, 12%);
   --screenbackground: hsl(268, 71%, 12%);
   /* key */
-  --keybackground: hsl(281, 89%, 26%);
-  --keyshadow: hsl(285, 91%, 52%);
+  --twokeybackground: hsl(281, 89%, 26%);
+  --twokeyshadow: hsl(285, 91%, 52%);
   --keybackgroundNtoggle: hsl(176, 100%, 44%);
-  --keyshadow: hsl(177, 92%, 70%);
+  --equalkeyshadow: hsl(177, 92%, 70%);
   --keybackground: hsl(268, 47%, 21%);
   --keyshadow: hsl(290, 70%, 36%);
   /* text */
-  --deepText: hsl(198, 20%, 13%);
-  --White: hsl(0, 0%, 100%);
+
+  --logoColor: hsl(52, 100%, 62%);
+  --pColor: hsl(52, 100%, 62%);
+  --displayNum: hsl(52, 100%, 62%);
+  --btnNum: hsl(52, 100%, 62%);
+  --twoBtnColor: hsl(0, 0%, 100%);
+  --equalColor: hsl(198, 20%, 13%);
 }
 
 body {
@@ -65,7 +81,7 @@ body {
 .container {
   width: 80%;
   height: 100vh;
-  max-width: 500px;
+  max-width: 400px;
   margin: 0px auto;
   display: flex;
   flex-direction: column;
@@ -80,7 +96,7 @@ header {
 }
 .logo-a {
   text-decoration: none;
-  color: var(--White);
+  color: var(--logoColor);
   font-size: 30px;
 }
 .header-right {
@@ -89,7 +105,7 @@ header {
   align-items: center;
 }
 p {
-  color: var(--White);
+  color: var(--pColor);
 }
 .switch {
   margin-left: 10px;
@@ -142,9 +158,10 @@ p {
 
 .display-field {
   width: 100%;
+  height: 60px;
   border-radius: 5px;
   background-color: var(--screenbackground);
-  color: var(--White);
+  color: var(--displayNum);
   padding: 15px;
   text-align: right;
 }
@@ -170,19 +187,26 @@ button {
   box-shadow: 0 4px 2px -2px var(--keyshadow);
   cursor: pointer;
   background-color: var(--keybackground);
-  color: var(--deepText);
+  color: var(--btnNum);
+  border-radius: 5px;
+  border: none;
 }
-#btn-del {
-  font-size: 24px;
+/* #btn-del */
+.two-btn {
+  font-size: 20px;
   text-transform: uppercase;
-  background-color: var();
+  background-color: var(--twokeybackground);
+  box-shadow: 0 4px 2px -2px var(--twokeyshadow);
+  color: var(--twoBtnColor);
 }
 #btn-reset {
   grid-column: 1/3;
-  text-transform: uppercase;
 }
 #btn-equals {
   grid-column: 3/5;
+  background-color: var(--keybackgroundNtoggle);
+  box-shadow: 0 4px 2px -2px var(--equalkeyshadow);
+  color: var(--equalColor);
 }
 
 /* attribution */
